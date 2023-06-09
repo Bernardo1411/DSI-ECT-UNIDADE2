@@ -1,8 +1,10 @@
 
 const InitialPage = () => {
-    return <div>
-        <p>InitialPage</p>
-    </div>;
+  return (
+    <div>
+      <p>texto</p>
+    </div>
+  )
 }
 
 export default InitialPage;
