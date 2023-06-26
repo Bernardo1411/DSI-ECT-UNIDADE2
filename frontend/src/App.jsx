@@ -10,16 +10,17 @@ const style = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100vh',
     width: '100vw',
-    backgroundColor: '#877565',
+    backgroundColor: '#F0F2F5',
 }};
 
 function App() {
-  const userLogged = false;
+  const userLogged = sessionStorage.getItem('isLogin') === 'true';
   let route = <Route exact path="/" Component={InitialPage} />;
 
-  if(userLogged) route = <Route path="/user" Component={UserPage} />;
+  if (userLogged) {
+    route = <Route path="/user" Component={UserPage} />;
+  }
 
   return (
     <Container sx={style.container}>
@@ -27,7 +28,7 @@ function App() {
         {route}
       </Routes>
     </Container>
-  )
+  );
 }
 
 export default App
